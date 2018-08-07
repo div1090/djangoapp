@@ -17,5 +17,6 @@ from django.conf.urls import url
 from django.contrib import admin
 
 urlpatterns = [
+    path('', include('Streamer.urls')),
     url(r'^admin/', admin.site.urls),
 ]
