@@ -5,18 +5,18 @@ from django.template import loader
 from django.urls import reverse
 from django.utils import timezone
 from .models import Camera, Stream
-from rq import Queue
-from rq.job import Job
-from worker import conn
-import redis
+# from rq import Queue
+# from rq.job import Job
+# from worker import conn
+# import redis
 import os,base64, time
 import datetime
 from PIL import Image
 
 FV = None
-q = Queue('high', default_timeout=8,connection=conn)
-r = redis.StrictRedis()
-p = r.pubsub(ignore_subscribe_messages=True)
+# q = Queue('high', default_timeout=8,connection=conn)
+# r = redis.StrictRedis()
+# p = r.pubsub(ignore_subscribe_messages=True)
 
 save_streams = False
 # app.config["TEMPLATES_AUTO_RELOAD"] = True
