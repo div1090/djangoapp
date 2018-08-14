@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>EagleGold Video Streams</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.css" />
+
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="panel panel-primary">
+        <div class="panel-heading"> <h1 >EagleGold Video Streams</h1></div>
+        <div class="panel-body"><p> Welcome to AETOS HQ Live Stream!</p>
+          <p> Select the Camera-ID to view live stream </p>
+          <br>
+          <form name = "camera_form" action="get_camera" method="post">
+            {% csrf_token %}
+            <select name="camera_dropdown" class="selectpicker" data-live-search="true">
+               {% for c in cameras %}
+                 <option value = "{{c.id}}">Camera {{c.ID}}</option>
+               {% endfor %}
+            </select>
+
+          <button type="submit" class="btn btn-primary">View Live!</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+      $('.selectpicker').selectpicker({
+        });
+  </script>
+<html>

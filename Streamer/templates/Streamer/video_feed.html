@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EagleGold Video Stream</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+
+<div class="panel panel-primary">
+    <div class="panel-heading"> <h1 >Live from Camera {{camera_id}}</h1></div>
+      <div class="panel-body">
+
+    </div>
+    <script>
+      if("undefined"!=typeof history.pushState){var o={Title:"Video Streaming",Url:"/"};history.pushState(o,o.Title,o.Url)}
+    </script>
+    <img class = "viewport img-responsive center-block" id=mj src="{% url 'Streamer:live' camera_id %}" alt="Video feed currently unavailable" >
+</div>
+
+</body>
+</html>
