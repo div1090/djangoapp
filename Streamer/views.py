@@ -72,8 +72,8 @@ def index(request):
         **Template:** :file:`Streamer/index.html`
 
     """
-    cameras = Camera.objects.all()
-    context = {'cameras':cameras,}
+    # cameras = Camera.objects.all()
+    context = {'cameras':{1,2,3},}
     return render(request, 'Streamer/index.html', context)
 
 def get_camera(request):
