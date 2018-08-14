@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
    'default': {
    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-   'NAME': os.environ.get('DATABASENAME', ''),
-   'USER': os.environ.get('DATABASEUSER', ''),
-   'PASSWORD': os.environ.get('DATABASEPASSWORD', ''),
-   'HOST': os.environ.get('DATABASEHOST', ''),
+   'NAME': 'streamer',#os.environ.get('DATABASENAME', ''),
+   'USER': 'assure@assurestream-psql',#os.environ.get('DATABASEUSER', ''),
+   'PASSWORD': 'Aetos123',#os.environ.get('DATABASEPASSWORD', ''),
+   'HOST': 'assurestream-psql.postgres.database.azure.com', #os.environ.get('DATABASEHOST', ''),
    'PORT': '5432',
   }
 }
